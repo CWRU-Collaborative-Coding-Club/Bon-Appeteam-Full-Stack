@@ -1,0 +1,139 @@
+"27301451": {
+        "id": "27301451",
+        "label": "made-to-order omelette bar",
+        "recipes": null,
+        "description": "cage-free eggs, tomatoes, spinach, peppers, onions, ham, sausage, Cleveland tofu, scallions, cheese and egg whites available upon request (New Creation Farms - Chardon, OH) (Rainbow Farms - Madison, OH) (Middlefield Original Cheese Co-Op - Middlefield, OH)",
+        "short_name": "",
+        "raw_cooked": "0",
+        "is_rotating": "0",
+        "zero_entree": "0",
+        "cor_icon": {
+            "9": "Made without Gluten-Containing Ingredients",
+            "6": "Farm to Fork",
+            "18": "Humane"
+        },
+        "ordered_cor_icon": {
+            "0003-0009": {
+                "id": "9",
+                "label": "Made without Gluten-Containing Ingredients"
+            },
+            "0007-0006": {
+                "id": "6",
+                "label": "Farm to Fork"
+            },
+            "0010-0018": {
+                "id": "18",
+                "label": "Humane"
+            }
+        },
+        "nextepid": "0",
+        "price": "",
+        "sizes": [],
+        "nutrition": {
+            "kcal": "",
+            "well_being": "",
+            "well_being_image": ""
+        },
+        "special": 1,
+        "tier3": 0,
+        "tier": 1,
+        "rating": "",
+        "connector": "",
+        "options": [],
+        "station_id": "1343",
+        "station": "<strong>@From The Fire<\/strong>",
+        "nutrition_details": {},
+        "ingredients": "",
+        "nutrition_link": "",
+        "sub_station_id": "",
+        "sub_station": "",
+        "sub_station_order": "",
+        "monotony": {}
+    },
+"27301456": {
+        "id": "27301456",
+        "label": "cage-free eggs any style, made-to-order",
+        "recipes": null,
+        "description": "",
+        "short_name": "",
+        "raw_cooked": "0",
+        "is_rotating": "0",
+        "zero_entree": "0",
+        "cor_icon": {
+            "1": "Vegetarian",
+            "9": "Made without Gluten-Containing Ingredients",
+            "18": "Humane"
+        },
+        "ordered_cor_icon": {
+            "0001-0001": {
+                "id": "1",
+                "label": "Vegetarian"
+            },
+            "0003-0009": {
+                "id": "9",
+                "label": "Made without Gluten-Containing Ingredients"
+            },
+            "0010-0018": {
+                "id": "18",
+                "label": "Humane"
+            }
+        },
+        "nextepid": "0",
+        "price": "",
+        "sizes": [],
+        "nutrition": {
+            "kcal": "",
+            "well_being": "",
+            "well_being_image": ""
+        },
+        "special": 1,
+        "tier3": 0,
+        "tier": 1,
+        "rating": "",
+        "connector": "",
+        "options": [],
+        "station_id": "1343",
+        "station": "<strong>@From The Fire<\/strong>",
+        "nutrition_details": {},
+        "ingredients": "",
+        "nutrition_link": "",
+        "sub_station_id": "",
+        "sub_station": "",
+        "sub_station_order": "",
+        "monotony": {}
+    },
+"27301418": {
+        "id": "27301418",
+        "label": "made without the top-9 allergens plus gluten-containing ingredients",
+        "recipes": null,
+        "description": "",
+        "short_name": "",
+        "raw_cooked": "0",
+        "is_rotating": "0",
+        "zero_entree": "0",
+        "cor_icon": [],
+        "ordered_cor_icon": [],
+        "nextepid": "0",
+        "price": "",
+        "sizes": [],
+        "nutrition": {
+            "kcal": "",
+            "well_being": "",
+            "well_being_image": ""
+        },
+        "special": 1,
+        "tier3": 0,
+        "tier": 1,
+        "rating": "",
+        "connector": "",
+        "options": [],
+        "station_id": "25038",
+        "station": "<strong>@SimplyOasis<\/strong>",
+        "nutrition_details": {},
+        "ingredients": "",
+        "nutrition_link": "",
+        "sub_station_id": "",
+        "sub_station": "",
+        "sub_station_order": "",
+        "monotony": {}
+    },

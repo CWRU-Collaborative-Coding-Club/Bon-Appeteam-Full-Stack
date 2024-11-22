@@ -1,0 +1,386 @@
+<?xml version="1.0"?>
+<menu>
+   <food id="fi001">
+      <title>White Rice</title>
+      <meats>false</meats>
+      <grains>true</grains>
+      <dairy>false</dairy>
+      <fruitveg>false</fruitveg>
+      <fatsoils>false</fatsoils>
+      <location>Leutner</location>
+      <time>lunch</time>
+      <calories>130</calories>
+      <carbs>27</carbs>
+      <protein>3</protein>
+      <fat>0</fat>
+      <sugars>0</sugars>
+      <sodium>210</sodium>
+      <dietaryfiber>1</dietaryfiber>
+      <vegan>true</vegan>
+      <gluten>true</gluten>
+      <servingsize>4.1</servingsize>
+      <description>plain white rice</description>
+   </food>
+   <food id="fi002">
+      <title>Scrambled Eggs</title>
+      <meats>false</meats>
+      <grains>false</grains>
+      <dairy>true</dairy>
+      <fruitveg>false</fruitveg>
+      <fatsoils>false</fatsoils>
+      <location>Leutner</location>
+      <time>breakfast</time>
+      <calories>210</calories>
+      <carbs>1</carbs>
+      <protein>15</protein>
+      <fat>16</fat>
+      <sugars>0</sugars>
+      <sodium>170</sodium>
+      <dietaryfiber>0</dietaryfiber>
+      <vegan>false</vegan>
+      <gluten>false</gluten>
+      <servingsize>4.0</servingsize>
+      <description>fresh scrambled eggs</description>
+   </food>
+   <food id="fi003">
+      <title>Buttermilk Chocolate Chip Pancakes</title>
+      <meats>false</meats>
+      <grains>true</grains>
+      <dairy>false</dairy>
+      <fruitveg>false</fruitveg>
+      <fatsoils>false</fatsoils>
+      <location>Leutner</location>
+      <time>breakfast</time>
+      <calories>290</calories>
+      <carbs>52</carbs>
+      <protein>6</protein>
+      <fat>7</fat>
+      <sugars>18</sugars>
+      <sodium>620</sodium>
+      <dietaryfiber>3</dietaryfiber>
+      <vegan>true</vegan>
+      <gluten>true</gluten>
+      <servingsize>5.2</servingsize>
+      <description>delicious chocolate pancakes</description>
+   </food>
+   <food id="fi004">
+      <title>Grilled Chicken</title>
+      <meats>true</meats>
+      <grains>false</grains>
+      <dairy>false</dairy>
+      <fruitveg>false</fruitveg>
+      <fatsoils>false</fatsoils>
+      <location>Leutner</location>
+      <time>all</time>
+      <calories>160</calories>
+      <carbs>0</carbs>
+      <protein>26</protein>
+      <fat>6</fat>
+      <sugars>0</sugars>
+      <sodium>230</sodium>
+      <dietaryfiber>0</dietaryfiber>
+      <vegan>true</vegan>
+      <gluten>true</gluten>
+      <servingsize>3.4</servingsize>
+      <description>tender grilled chicken</description>
+   </food>
+   <food id="fi005">
+      <title>Hand-Cut French Fries</title>
+      <meats>false</meats>
+      <grains>true</grains>
+      <dairy>false</dairy>
+      <fruitveg>false</fruitveg>
+      <fatsoils>false</fatsoils>
+      <location>Leutner</location>
+      <time>all</time>
+      <calories>110</calories>
+      <carbs>24</carbs>
+      <protein>2</protein>
+      <fat>0</fat>
+      <sugars>2</sugars>
+      <sodium>135</sodium>
+      <dietaryfiber>2</dietaryfiber>
+      <vegan>true</vegan>
+      <gluten>true</gluten>
+      <servingsize>4</servingsize>
+      <description>tasty fries</description>
+   </food>
+   <food id="fi006">
+      <title>Southern-Style Fried WhiteFish</title>
+      <meats>true</meats>
+      <grains>false</grains>
+      <dairy>false</dairy>
+      <fruitveg>false</fruitveg>
+      <fatsoils>false</fatsoils>
+      <location>Leutner</location>
+      <time>dinner</time>
+      <calories>340</calories>
+      <carbs>14</carbs>
+      <protein>24</protein>
+      <fat>21</fat>
+      <sugars>0</sugars>
+      <sodium>340</sodium>
+      <dietaryfiber>1</dietaryfiber>
+      <vegan>false</vegan>
+      <gluten>false</gluten>
+      <servingsize>4</servingsize>
+      <description>scrumptious fish</description>
+   </food>
+   <food id="fi007">
+      <title>Sweet Potato and Kidney Bean Hash</title>
+      <meats>false</meats>
+      <grains>false</grains>
+      <dairy>false</dairy>
+      <fruitveg>true</fruitveg>
+      <fatsoils>false</fatsoils>
+      <location>Leutner</location>
+      <time>breakfast</time>
+      <calories>210</calories>
+      <carbs>36</carbs>
+      <protein>10</protein>
+      <fat>3</fat>
+      <sugars>5</sugars>
+      <sodium>140</sodium>
+      <dietaryfiber>12</dietaryfiber>
+      <vegan>true</vegan>
+      <gluten>false</gluten>
+      <servingsize>6</servingsize>
+      <description>What's heavier, an ounce of 'ash or and ounce of led?</description>
+   </food>
+   <food id="fi008">
+      <title>Spiced Roasted Vegetables</title>
+      <meats>false</meats>
+      <grains>false</grains>
+      <dairy>false</dairy>
+      <fruitveg>true</fruitveg>
+      <fatsoils>false</fatsoils>
+      <location>Leutner</location>
+      <time>breakfast</time>
+      <calories>120</calories>
+      <carbs>14</carbs>
+      <protein>3</protein>
+      <fat>6</fat>
+      <sugars>6</sugars>
+      <sodium>170</sodium>
+      <dietaryfiber>3</dietaryfiber>
+      <vegan>true</vegan>
+      <gluten>false</gluten>
+      <servingsize>6</servingsize>
+      <description>Roasted Veggies</description>
+   </food>
+   <food id="fi009">
+      <title>Beyond Breakfast Sausage</title>
+      <meats>false</meats>
+      <grains>false</grains>
+      <dairy>false</dairy>
+      <fruitveg>true</fruitveg>
+      <fatsoils>false</fatsoils>
+      <location>Leutner</location>
+      <time>breakfast</time>
+      <calories>110</calories>
+      <carbs>3</carbs>
+      <protein>7</protein>
+      <fat>7</fat>
+      <sugars>0</sugars>
+      <sodium>230</sodium>
+      <dietaryfiber>1</dietaryfiber>
+      <vegan>false</vegan>
+      <gluten>false</gluten>
+      <servingsize>1.5</servingsize>
+      <description>Breakfast Sausage Alternative</description>
+   </food>
+   <food id="fi010">
+      <title>Home-Fried Potatoes</title>
+      <meats>false</meats>
+      <grains>false</grains>
+      <dairy>false</dairy>
+      <fruitveg>true</fruitveg>
+      <fatsoils>false</fatsoils>
+      <location>Leutner</location>
+      <time>breakfast</time>
+      <calories>140</calories>
+      <carbs>26</carbs>
+      <protein>3</protein>
+      <fat>3</fat>
+      <sugars>3</sugars>
+      <sodium>60</sodium>
+      <dietaryfiber>3</dietaryfiber>
+      <vegan>true</vegan>
+      <gluten>false</gluten>
+      <servingsize>6</servingsize>
+      <description>Home-Fried Potatoes</description>
+   </food>
+   <food id="fi011">
+      <title>Oatmeal</title>
+      <meats>false</meats>
+      <grains>true</grains>
+      <dairy>false</dairy>
+      <fruitveg>false</fruitveg>
+      <fatsoils>false</fatsoils>
+      <location>Leutner</location>
+      <time>breakfast</time>
+      <calories>130</calories>
+      <carbs>22</carbs>
+      <protein>6</protein>
+      <fat>2.5</fat>
+      <sugars>0</sugars>
+      <sodium>10</sodium>
+      <dietaryfiber>4</dietaryfiber>
+      <vegan>true</vegan>
+      <gluten>true</gluten>
+      <servingsize>9.9</servingsize>
+      <description>Oatmeal</description>
+   </food>
+   <food id="fi012">
+      <title>Grits</title>
+      <meats>false</meats>
+      <grains>true</grains>
+      <dairy>false</dairy>
+      <fruitveg>false</fruitveg>
+      <fatsoils>false</fatsoils>
+      <location>Leutner</location>
+      <time>breakfast</time>
+      <calories>190</calories>
+      <carbs>41</carbs>
+      <protein>4</protein>
+      <fat>1</fat>
+      <sugars>0</sugars>
+      <sodium>10</sodium>
+      <dietaryfiber>2</dietaryfiber>
+      <vegan>true</vegan>
+      <gluten>false</gluten>
+      <servingsize>10.2</servingsize>
+      <description>Some Grits</description>
+   </food>
+   <food id="fi013">
+      <title>New Orleans-Style Red Beans And Rice With Ham And Smoked Sausage</title>
+      <meats>true</meats>
+      <grains>false</grains>
+      <dairy>false</dairy>
+      <fruitveg>true</fruitveg>
+      <fatsoils>false</fatsoils>
+      <location>Leutner</location>
+      <time>lunch</time>
+      <calories>260</calories>
+      <carbs>31</carbs>
+      <protein>16</protein>
+      <fat>8</fat>
+      <sugars>2</sugars>
+      <sodium>560</sodium>
+      <dietaryfiber>5</dietaryfiber>
+      <vegan>false</vegan>
+      <gluten>false</gluten>
+      <servingsize>8</servingsize>
+      <description></description>
+   </food>
+   <food id="fi014">
+      <title>Roasted potatoes</title>
+      <meats>false</meats>
+      <grains>false</grains>
+      <dairy>false</dairy>
+      <fruitveg>true</fruitveg>
+      <fatsoils>false</fatsoils>
+      <location>Leutner</location>
+      <time>lunch</time>
+      <calories>140</calories>
+      <carbs>23</carbs>
+      <protein>2</protein>
+      <fat>5</fat>
+      <sugars>2</sugars>
+      <sodium>210</sodium>
+      <dietaryfiber>2</dietaryfiber>
+      <vegan>true</vegan>
+      <gluten>false</gluten>
+      <servingsize>4</servingsize>
+      <description></description>
+   </food>
+   <food id="fi015">
+      <title>Roasted Cauliflower</title>
+      <meats>false</meats>
+      <grains>false</grains>
+      <dairy>false</dairy>
+      <fruitveg>true</fruitveg>
+      <fatsoils>false</fatsoils>
+      <location>Leutner</location>
+      <time>lunch</time>
+      <calories>60</calories>
+      <carbs>8</carbs>
+      <protein>3</protein>
+      <fat>2.5</fat>
+      <sugars>3</sugars>
+      <sodium>210</sodium>
+      <dietaryfiber>3</dietaryfiber>
+      <vegan>true</vegan>
+      <gluten>false</gluten>
+      <servingsize>5.9</servingsize>
+      <description>White broccly</description>
+   </food>
+   <food id="fi016">
+      <title>Cheese Pizza</title>
+      <meats>true</meats>
+      <grains>false</grains>
+      <dairy>true</dairy>
+      <fruitveg>false</fruitveg>
+      <fatsoils>true</fatsoils>
+      <location>Leutner</location>
+      <time>lunch</time>
+      <calories>320</calories>
+      <carbs>41</carbs>
+      <protein>14</protein>
+      <fat>11</fat>
+      <sugars>3</sugars>
+      <sodium>600</sodium>
+      <dietaryfiber>2</dietaryfiber>
+      <vegan>false</vegan>
+      <gluten>true</gluten>
+      <servingsize>5.1</servingsize>
+      <description></description>
+   </food>
+   <food id="fi017">
+      <title>Pepperoni Pizza</title>
+      <meats>false</meats>
+      <grains>false</grains>
+      <dairy>false</dairy>
+      <fruitveg>false</fruitveg>
+      <fatsoils>false</fatsoils>
+      <location>Leutner</location>
+      <time>lunch</time>
+      <calories>390</calories>
+      <carbs>41</carbs>
+      <protein>17</protein>
+      <fat>18</fat>
+      <sugars>3</sugars>
+      <sodium>820</sodium>
+      <dietaryfiber>2</dietaryfiber>
+      <vegan>false</vegan>
+      <gluten>true</gluten>
+      <servingsize>5.6</servingsize>
+      <description></description>
+   </food>
+
+
+<!-- KEEP IN THE CODE, TEMPLATE FOR INSERTING FOOD OPTIONS -->
+   <!-- <food id="fi013">
+      <title></title>
+      <meats>false</meats>
+      <grains>false</grains>
+      <dairy>false</dairy>
+      <fruitveg>false</fruitveg>
+      <fatsoils>false</fatsoils>
+      <location>Leutner</location>
+      <time></time>
+      <calories></calories>
+      <carbs></carbs>
+      <protein></protein>
+      <fat></fat>
+      <sugars></sugars>
+      <sodium></sodium>
+      <dietaryfiber></dietaryfiber>
+      <vegan></vegan>
+      <gluten></gluten>
+      <servingsize></servingsize>
+      <description></description>
+   </food> -->
+
+	
+</menu> <!--KEEP IN THE CODE OR ELSE XML FILE WILL NOT RUN  -->
