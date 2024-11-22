@@ -2,48 +2,15 @@
 
 const Food = require('./testFiles/foodclasstest');
 
-// Add hardcoded food items
-const HARDCODED_FOODS = {
-    'creamy grits': {
-        calories: 150,
-        carbs: 31,
-        protein: 3,
-        fat: 2,
-        satfat: 1,
-        transfat: 0,
-        chol: 0,
-        sugars: 0,
-        sodium: 540,
-        dietaryfiber: 1
-    },
-    'beef curry soup with lentils': {
-        calories: 280,
-        carbs: 35,
-        protein: 18,
-        fat: 8,
-        satfat: 3,
-        transfat: 0,
-        chol: 25,
-        sugars: 4,
-        sodium: 780,
-        dietaryfiber: 6
-    },
-    'creamy chicken taco soup': {
-        calories: 220,
-        carbs: 25,
-        protein: 15,
-        fat: 7,
-        satfat: 2.5,
-        transfat: 0,
-        chol: 45,
-        sugars: 3,
-        sodium: 680,
-        dietaryfiber: 4
-    }
-};
+
+
+const hardcoded_Foods = [Food.Food1, Food.Food2, Food.Food3, Food.Food4];
+
 
 module.exports = class User {
-    constructor() {
+    constructor(mealplan) {
+        this.mealPlan = mealplan;
+
         //daily goals of consumption for the user
         this.dailykcal = 2000;
         this.dailycarb = 225;
@@ -51,11 +18,12 @@ module.exports = class User {
         this.dailyfat = 57;
         this.dailysatfat = 22;
         this.dailytransfat =
-        this.dailysugars = 50;
+            this.dailysugars = 50;
         this.dailysodium = 50;
         this.dailydietaryFiber = 50;
         this.chol = 0;
         this.mealPlan = null; // Initialize mealPlan as null, to be assigned later if needed
+        this.dailyeaten = [];
 
         //weekly goals of consumption for the user
         this.weeklykcal = 2000*7;
@@ -83,6 +51,8 @@ module.exports = class User {
         this.consumedchol = 0;
 
     }
+
+
 
     // Nutrition getters
     get dailyKcal() {
@@ -177,7 +147,6 @@ module.exports = class User {
         return this.consumedchol;
     }
 
-
     // Method to track food consumption
     eatName(foodName) {
         const normalizedFoodName = foodName.toLowerCase();
@@ -187,7 +156,6 @@ module.exports = class User {
             throw new Error(`Food item "${foodName}" not found`);
         }
 
-
         // Update consumed values
         this.consumedkcal += foodData.calories;
         this.consumedcarb += foodData.carbs;
@@ -201,28 +169,7 @@ module.exports = class User {
         this.consumeddietaryFiber += foodData.dietaryfiber;
 
         // Track eaten items
-        this.dailyeaten.push(foodData);
-
-        return foodData;
-    }
-
-    // Method to track food consumption
-    eat(foodName) {
-
-        // Update consumed values
-        this.consumedkcal += foodData.calories;
-        this.consumedcarb += foodData.carbs;
-        this.consumedprotein += foodData.protein;
-        this.consumedfat += foodData.fat;
-        this.consumedsatfat += foodData.satfat;
-        this.consumedtransfat += foodData.transfat;
-        this.consumedchol += foodData.chol;
-        this.consumedsugars += foodData.sugars;
-        this.consumedsodium += foodData.sodium;
-        this.consumeddietaryFiber += foodData.dietaryfiber;
-
-        // Track eaten items
-        this.dailyeaten.push(foodData);
+        this.dailyeaten.push(foodData); // where is dailyeaten? is it field stack or array?
 
         return foodData;
     }
@@ -254,27 +201,51 @@ module.exports = class User {
         const fiberdiff = (this.dailydietaryFiber - this.consumeddietaryFiber)/remainingkcal - itemfiberratio;
         ////.
 
-
-        return (food.calories/remainingkcal)(prodiff + carbdiff + fatdiff + satfatdiff + transfatdiff + choldiff + sugardiff + sodiumdiff + fiberdiff);
+        return (food.calories / remainingkcal)(prodiff + carbdiff + fatdiff + satfatdiff + transfatdiff + choldiff + sugardiff + sodiumdiff + fiberdiff);
     }
 
-
     mergeSortRankFoods(array) {
-        if (array.length <= 1) {
-            return array; // Base case: an array of 0 or 1 element is already sorted
-        }
+        const copy = [];
 
-        // Split the array into two halves
-        const mid = Math.floor(array.length / 2);
-        const left = array.slice(0, mid);
-        const right = array.slice(mid);
+        for (let i = 0; i < arra)
 
-        // Recursively sort both halves
-        const sortedLeft = this.mergeSort(left);
-        const sortedRight = this.mergeSort(right);
-
+        mergeSort(array, );
         // Merge the sorted halves
         return this.merge(sortedLeft, sortedRight);
+    }
+
+    mergeSort(array, copy, p, r) {
+        if (p < r) {
+            // Split the array into two halves
+            const mid = Math.floor(array.length / 2);
+            this.mergeSort(array, copy, p, mid);
+            this.mergeSort(array, copy, mid + 1, r);
+            this.merge(array, copy, p, mid, r);
+        }
+    }
+
+    merge(array, copy, p, mid, r) {
+        let i = p;
+        let j = mid + 1;
+        let k = p;
+
+        // Compare and merge elements from both halves
+        while (i <= mid && j <= r) {
+            if (this.scoreMeal(array[i]) <= this.scoreMeal(array[j]))
+                copy[k++] = array[i++];
+            else
+                copy[k++] = array[j++];
+        }
+
+        while (i <= mid)
+            copy[k++] = array[i++];
+
+        while (j <= r)
+            copy[k++] = array[j++];
+
+        // Append any remaining elements from the left and right halves
+        for (let w = p; w <= r; w++)
+            array[w] = copy[w];
     }
 
     merge(left, right) {
@@ -283,13 +254,10 @@ module.exports = class User {
 
         // Compare and merge elements from both halves
         while (i < left.length && j < right.length) {
-            if (this.scoreMeal(left[i]) <= this.scoreMeal(right[j])) {
-                sortedArray.push(left[i]);
-                i++;
-            } else {
-                sortedArray.push(right[j]);
-                j++;
-            }
+            if (this.scoreMeal(left[i]) <= this.scoreMeal(right[j]))
+                sortedArray.push(left[i++]);
+            else
+                sortedArray.push(right[j++]);
         }
 
         // Append any remaining elements from the left and right halves
@@ -371,3 +339,7 @@ module.exports = class User {
         this.mealPlan = new User.MealPlan(type);
     }
 };
+
+const user = new User(User.MealPlan('Classic'));
+
+

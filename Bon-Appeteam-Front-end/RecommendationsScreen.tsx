@@ -3,9 +3,18 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import { ProgressBar } from 'react-native-paper';
 import styles from './styles';
-import HARDCODED_FOODS from '/Users/shreyhanlakhina/Dropbox/Bon-Appeteam-Back-end/user.js';
+import { HARDCODED_FOODS } from '../Bon-Appeteam-Back-end/foods.js';
+
 
 function RecommendationsScreen() {
+    const recommendations = Object.entries(HARDCODED_FOODS).map(([foodName, foodData], index) => ({
+        option: foodName,
+        similarity: Math.random(), // Replace this with an actual similarity calculation
+        location: Math.random() * 10, // Replace this with actual location data
+        remainingSwipes: 10 - index, // Replace this with actual logic if needed
+    }));
+
+    /*
     let recommendations = [
         {
             option: 'Option 1',
@@ -32,7 +41,7 @@ function RecommendationsScreen() {
             remainingSwipes: 2,
         },
     ].sort((a, b) => b.similarity - a.similarity);
-
+    */
     return (
         <ScrollView style={styles.container}>
             {recommendations.map((rec, index) => (
