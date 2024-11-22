@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         height: 8,
         borderRadius: 5,
         marginLeft: 8,
-        maxWidth: Dimensions.get('window').width - 150,
+        maxWidth: Dimensions.get('window').width - 175,
         borderWidth: 0.1,
         borderColor: '#000',
     },
@@ -56,7 +56,17 @@ const styles = StyleSheet.create({
     },
     darkblue: {
         color: '#09143A'
-    }
+    },
+    input: {
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 5,
+        padding: 10,
+        fontSize: 16,
+        backgroundColor: '#fff',
+        marginTop: 8,
+    },
+
 });
 
 export default styles;
