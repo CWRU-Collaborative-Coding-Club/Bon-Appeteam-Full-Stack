@@ -4,10 +4,11 @@ const Food = require('./testFiles/foodclasstest');
 
 
 
-const hardcoded_Foods = [Food.Food1, Food.Food2, Food.Food3, Food.Food4];
+const hardcoded_Foods = Food.testFood1;
 
 
-module.exports = class User {
+
+class User {
     constructor(mealplan) {
         this.mealPlan = mealplan;
 
@@ -17,8 +18,8 @@ module.exports = class User {
         this.dailyprotein = 175;
         this.dailyfat = 57;
         this.dailysatfat = 22;
-        this.dailytransfat =
-            this.dailysugars = 50;
+        this.dailytransfat = 1;
+        this.dailysugars = 50;
         this.dailysodium = 50;
         this.dailydietaryFiber = 50;
         this.chol = 0;
@@ -49,7 +50,6 @@ module.exports = class User {
         this.consumedsodium = 0;
         this.consumeddietaryFiber = 0;
         this.consumedchol = 0;
-
     }
 
 
@@ -148,9 +148,9 @@ module.exports = class User {
     }
 
     // Method to track food consumption
-    eatName(foodName) {
+    eatByName(foodName) {
         const normalizedFoodName = foodName.toLowerCase();
-        const foodData = HARDCODED_FOODS[normalizedFoodName];
+        const foodData = hardcoded_Foods[normalizedFoodName];
 
         if (!foodData) {
             throw new Error(`Food item "${foodName}" not found`);
@@ -169,7 +169,7 @@ module.exports = class User {
         this.consumeddietaryFiber += foodData.dietaryfiber;
 
         // Track eaten items
-        this.dailyeaten.push(foodData); // where is dailyeaten? is it field stack or array?
+        this.dailyeaten.push(foodData);
 
         return foodData;
     }
@@ -207,11 +207,13 @@ module.exports = class User {
     mergeSortRankFoods(array) {
         const copy = [];
 
-        for (let i = 0; i < arra)
+        for (let i = 0; i < array.length; i++)
+            copy[i] = 0;
 
-        mergeSort(array, );
         // Merge the sorted halves
-        return this.merge(sortedLeft, sortedRight);
+        this.mergeSort(array, copy, 0, array.length - 1);
+
+        return array;
     }
 
     mergeSort(array, copy, p, r) {
@@ -248,6 +250,7 @@ module.exports = class User {
             array[w] = copy[w];
     }
 
+    /*
     merge(left, right) {
         const sortedArray = [];
         let i = 0, j = 0;
@@ -262,7 +265,7 @@ module.exports = class User {
 
         // Append any remaining elements from the left and right halves
         return sortedArray.concat(left.slice(i)).concat(right.slice(j));
-    }
+    } */
     //
 
     // MealPlan subclass with updated swipe types
@@ -340,6 +343,12 @@ module.exports = class User {
     }
 };
 
-const user = new User(User.MealPlan('Classic'));
+const user = new User(new User.MealPlan('Classic'));
+
+console.log(user.scoreMeal(hardcoded_Foods[0]));
+user.eatByName(hardcoded_Foods[0]); // its kinda stupid but i changed the name a bit
+console.log(user.scoreMeal(hardcoded_Foods[0]));
+console.log(user.dailyeaten);
 
 
+module.exports = User;

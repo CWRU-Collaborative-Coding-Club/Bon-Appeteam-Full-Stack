@@ -1,20 +1,19 @@
 const express = require('express');
 const cors = require('cors');
-
+const { HARDCODED_FOODS } = require('./foods.js');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 const port = 8080;
+const status = true;
 
-const recommendedFoods = [ //placeholders
-    { id: 1, name: 'Avocado', benefits: 'Rich in healthy fats' },
-    { id: 2, name: 'Blueberries', benefits: 'High in antioxidants' },
-    { id: 3, name: 'Salmon', benefits: 'Great source of omega-3s' },
-];
+app.get('/api/foods', (req, res) => {
+    res.json(HARDCODED_FOODS);
+});
 
 app.get(`/status`, (req,res) => {
-    if(true){
+    if(status){
         res.send('Online');
     } else {
         res.send('Offline');

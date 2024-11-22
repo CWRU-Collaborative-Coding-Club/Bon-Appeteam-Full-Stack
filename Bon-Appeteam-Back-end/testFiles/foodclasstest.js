@@ -1,576 +1,6 @@
 //'title','calories', 'carbs', 'protein', 'fat', 'sugars', 'sodium', 'dietaryfiber'
 const { addValue, checkValue, checkIfExists } = require("../leveldb/level.js");
 
-class Food {
-    // Constructor method to initialize an object
-    static json1 = {
-        "27320362": {
-            "id": "27320362",
-            "label": "creamy grits",
-            "recipes": {
-                "entrees": [
-                    {
-                        "recipe_id": "70117559",
-                        "recipe_name": "creamy grits"
-                    }
-                ],
-                "sides": []
-            },
-            "description": "",
-            "short_name": "",
-            "raw_cooked": "0",
-            "is_rotating": "0",
-            "zero_entree": "0",
-            "cor_icon": {
-                "1": "Vegetarian",
-                "9": "Made without Gluten-Containing Ingredients"
-            },
-            "ordered_cor_icon": {
-                "0001-0001": {
-                    "id": "1",
-                    "label": "Vegetarian"
-                },
-                "0003-0009": {
-                    "id": "9",
-                    "label": "Made without Gluten-Containing Ingredients"
-                }
-            },
-            "nextepid": "0",
-            "price": "",
-            "sizes": [],
-            "nutrition": {
-                "kcal": "390",
-                "well_being": "",
-                "well_being_image": ""
-            },
-            "special": 1,
-            "tier3": 0,
-            "tier": 1,
-            "rating": "",
-            "connector": "",
-            "options": [],
-            "station_id": "4160",
-            "station": "<strong>@soup<\/strong>",
-            "nutrition_details": {
-                "calories": {
-                    "label": "Calories",
-                    "value": "390",
-                    "unit": ""
-                },
-                "servingSize": {
-                    "label": "Serving Size",
-                    "value": "8.0",
-                    "unit": "oz"
-                },
-                "fatContent": {
-                    "label": "Total Fat",
-                    "value": "24",
-                    "unit": "g"
-                },
-                "saturatedFatContent": {
-                    "label": "Saturated Fat",
-                    "value": "14",
-                    "unit": "g"
-                },
-                "transFatContent": {
-                    "label": "Trans Fat",
-                    "value": "1",
-                    "unit": "g"
-                },
-                "cholesterolContent": {
-                    "label": "Cholesterol",
-                    "value": "65",
-                    "unit": "mg"
-                },
-                "sodiumContent": {
-                    "label": "Sodium",
-                    "value": "420",
-                    "unit": "mg"
-                },
-                "carbohydrateContent": {
-                    "label": "Total Carbohydrate",
-                    "value": "39",
-                    "unit": "g"
-                },
-                "fiberContent": {
-                    "label": "Dietary Fiber",
-                    "value": "2",
-                    "unit": "g"
-                },
-                "sugarContent": {
-                    "label": "Sugars",
-                    "value": "5",
-                    "unit": "g"
-                },
-                "proteinContent": {
-                    "label": "Protein",
-                    "value": "7",
-                    "unit": "g"
-                }
-            },
-            "ingredients": "",
-            "nutrition_link": "nutrition information",
-            "sub_station_id": "",
-            "sub_station": "",
-            "sub_station_order": "",
-            "monotony": {}
-        },
-    }
-    static Food1 = Food.createFoodFromJson(json1)
-
-    static json2 ={
-        "27301756": {
-            "id": "27301756",
-            "label": "French toast",
-            "recipes": {
-                "entrees": [
-                    {
-                        "recipe_id": "70069741",
-                        "recipe_name": "french toast"
-                    }
-                ],
-                "sides": []
-            },
-            "description": "Hartzler Family Dairy, Texas toast, cage-free eggs",
-            "short_name": "",
-            "raw_cooked": "0",
-            "is_rotating": "0",
-            "zero_entree": "0",
-            "cor_icon": {
-                "1": "Vegetarian",
-                "6": "Farm to Fork",
-                "18": "Humane"
-            },
-            "ordered_cor_icon": {
-                "0001-0001": {
-                    "id": "1",
-                    "label": "Vegetarian"
-                },
-                "0007-0006": {
-                    "id": "6",
-                    "label": "Farm to Fork"
-                },
-                "0010-0018": {
-                    "id": "18",
-                    "label": "Humane"
-                }
-            },
-            "nextepid": "0",
-            "price": "",
-            "sizes": [],
-            "nutrition": {
-                "kcal": "300",
-                "well_being": "",
-                "well_being_image": ""
-            },
-            "special": 1,
-            "tier3": 0,
-            "tier": 1,
-            "rating": "",
-            "connector": "",
-            "options": [],
-            "station_id": "25035",
-            "station": "<strong>@From The Home<\/strong>",
-            "nutrition_details": {
-                "calories": {
-                    "label": "Calories",
-                    "value": "300",
-                    "unit": ""
-                },
-                "servingSize": {
-                    "label": "Serving Size",
-                    "value": "5.0",
-                    "unit": "oz"
-                },
-                "fatContent": {
-                    "label": "Total Fat",
-                    "value": "12",
-                    "unit": "g"
-                },
-                "saturatedFatContent": {
-                    "label": "Saturated Fat",
-                    "value": "4",
-                    "unit": "g"
-                },
-                "transFatContent": {
-                    "label": "Trans Fat",
-                    "value": "0",
-                    "unit": "g"
-                },
-                "cholesterolContent": {
-                    "label": "Cholesterol",
-                    "value": "80",
-                    "unit": "mg"
-                },
-                "sodiumContent": {
-                    "label": "Sodium",
-                    "value": "380",
-                    "unit": "mg"
-                },
-                "carbohydrateContent": {
-                    "label": "Total Carbohydrate",
-                    "value": "39",
-                    "unit": "g"
-                },
-                "fiberContent": {
-                    "label": "Dietary Fiber",
-                    "value": "1",
-                    "unit": "g"
-                },
-                "sugarContent": {
-                    "label": "Sugars",
-                    "value": "4",
-                    "unit": "g"
-                },
-                "proteinContent": {
-                    "label": "Protein",
-                    "value": "10",
-                    "unit": "g"
-                }
-            },
-            "ingredients": "",
-            "nutrition_link": "nutrition information",
-            "sub_station_id": "",
-            "sub_station": "",
-            "sub_station_order": "",
-            "monotony": {}
-        }
-    }
-
-    static Food2 = Food.createFoodFromJson(json2)
-
-    static json3 = {
-        "20079470": {
-            "id": "20079470",
-            "label": "Bran Flakes",
-            "recipes": {
-                "entrees": [
-                    {
-                        "recipe_id": "73372377",
-                        "recipe_name": "bran flakes"
-                    }
-                ]
-            },
-            "description": "",
-            "short_name": "",
-            "raw_cooked": "0",
-            "is_rotating": "0",
-            "zero_entree": "0",
-            "cor_icon": {
-                "4": "Vegan"
-            },
-            "ordered_cor_icon": {
-                "0002-0004": {
-                    "id": "4",
-                    "label": "Vegan"
-                }
-            },
-            "nextepid": "0",
-            "price": "",
-            "sizes": [],
-            "nutrition": {
-                "kcal": "200",
-                "well_being": "",
-                "well_being_image": ""
-            },
-            "special": 0,
-            "tier3": 0,
-            "tier": "2",
-            "rating": "",
-            "connector": "",
-            "options": [],
-            "station_id": "3818",
-            "station": "<strong>@breakfast<\/strong>",
-            "nutrition_details": {
-                "calories": {
-                    "label": "Calories",
-                    "value": "200",
-                    "unit": ""
-                },
-                "servingSize": {
-                    "label": "Serving Size",
-                    "value": "1.0",
-                    "unit": "oz"
-                },
-                "fatContent": {
-                    "label": "Total Fat",
-                    "value": "1.5",
-                    "unit": "g"
-                },
-                "saturatedFatContent": {
-                    "label": "Saturated Fat",
-                    "value": "0",
-                    "unit": "g"
-                },
-                "transFatContent": {
-                    "label": "Trans Fat",
-                    "value": "0",
-                    "unit": "g"
-                },
-                "cholesterolContent": {
-                    "label": "Cholesterol",
-                    "value": "0",
-                    "unit": "mg"
-                },
-                "sodiumContent": {
-                    "label": "Sodium",
-                    "value": "330",
-                    "unit": "mg"
-                },
-                "carbohydrateContent": {
-                    "label": "Total Carbohydrate",
-                    "value": "50",
-                    "unit": "g"
-                },
-                "fiberContent": {
-                    "label": "Dietary Fiber",
-                    "value": "11",
-                    "unit": "g"
-                },
-                "sugarContent": {
-                    "label": "Sugars",
-                    "value": "11",
-                    "unit": "g"
-                },
-                "proteinContent": {
-                    "label": "Protein",
-                    "value": "6",
-                    "unit": "g"
-                }
-            },
-            "ingredients": "bran flakes",
-            "nutrition_link": "nutrition information",
-            "sub_station_id": "122135",
-            "sub_station": "cereals cold",
-            "sub_station_order": "2",
-            "monotony": {}
-        }
-    }
-
-    static Food3 = Food.createFoodFromJson(json3)
-
-    static json4 = {
-        "20079472": {
-            "id": "20079472",
-            "label": "Cheerios",
-            "recipes": {
-                "entrees": [
-                    {
-                        "recipe_id": "73372511",
-                        "recipe_name": "cheerios"
-                    }
-                ]
-            },
-            "description": "",
-            "short_name": "",
-            "raw_cooked": "0",
-            "is_rotating": "0",
-            "zero_entree": "0",
-            "cor_icon": {
-                "4": "Vegan",
-                "9": "Made without Gluten-Containing Ingredients"
-            },
-            "ordered_cor_icon": {
-                "0002-0004": {
-                    "id": "4",
-                    "label": "Vegan"
-                },
-                "0003-0009": {
-                    "id": "9",
-                    "label": "Made without Gluten-Containing Ingredients"
-                }
-            },
-            "nextepid": "0",
-            "price": "",
-            "sizes": [],
-            "nutrition": {
-                "kcal": "100",
-                "well_being": "",
-                "well_being_image": ""
-            },
-            "special": 0,
-            "tier3": 0,
-            "tier": "2",
-            "rating": "",
-            "connector": "",
-            "options": [],
-            "station_id": "3818",
-            "station": "<strong>@breakfast<\/strong>",
-            "nutrition_details": {
-                "calories": {
-                    "label": "Calories",
-                    "value": "100",
-                    "unit": ""
-                },
-                "servingSize": {
-                    "label": "Serving Size",
-                    "value": "1.0",
-                    "unit": "oz"
-                },
-                "fatContent": {
-                    "label": "Total Fat",
-                    "value": "2",
-                    "unit": "g"
-                },
-                "saturatedFatContent": {
-                    "label": "Saturated Fat",
-                    "value": "0",
-                    "unit": "g"
-                },
-                "transFatContent": {
-                    "label": "Trans Fat",
-                    "value": "0",
-                    "unit": "g"
-                },
-                "cholesterolContent": {
-                    "label": "Cholesterol",
-                    "value": "0",
-                    "unit": "mg"
-                },
-                "sodiumContent": {
-                    "label": "Sodium",
-                    "value": "135",
-                    "unit": "mg"
-                },
-                "carbohydrateContent": {
-                    "label": "Total Carbohydrate",
-                    "value": "20",
-                    "unit": "g"
-                },
-                "fiberContent": {
-                    "label": "Dietary Fiber",
-                    "value": "3",
-                    "unit": "g"
-                },
-                "sugarContent": {
-                    "label": "Sugars",
-                    "value": "1",
-                    "unit": "g"
-                },
-                "proteinContent": {
-                    "label": "Protein",
-                    "value": "3",
-                    "unit": "g"
-                }
-            },
-            "ingredients": "cheerios",
-            "nutrition_link": "nutrition information",
-            "sub_station_id": "122135",
-            "sub_station": "cereals cold",
-            "sub_station_order": "2",
-            "monotony": {}
-        }
-    }
-
-    static Food4 = Food.createFoodFromJson(json4)
-
-    constructor(nutarray) {
-        this.title = nutarray[0];
-        this.calories = nutarray[1];
-        this.carbs = nutarray[2];
-        this.protein = nutarray[3];
-        this.fat = nutarray[4];
-        this.satfat = nutarray[5];
-        this.transfat = nutarray[6];
-        this.chol = nutarray[7];
-        this.sugars = nutarray[8];
-        this.sodium = nutarray[9];
-        this.dietaryfiber = nutarray[10];
-        this.servingsize = nutarray[11];
-        //flags
-
-
-        this.nutinfo = nutarray;
-    }
-
-    // Getter
-    get data() {
-        return this.nutinfo;
-    }
-
-    // getter
-    get getName() {
-        return this.title;
-    }
-
-
-    static combine(food1, food2) {
-        const combarray = [];
-        combarray[0] = `${food1.title} & ${food2.title}`;
-        combarray[1] = Number(food1.data[1]) + Number(food2.data[1]);
-        combarray[2] = Number(food1.data[2]) + Number(food2.data[2]);
-        combarray[3] = Number(food1.data[3]) + Number(food2.data[3]);
-        combarray[4] = Number(food1.data[4]) + Number(food2.data[4]);
-        combarray[5] = Number(food1.data[5]) + Number(food2.data[5]);
-        combarray[6] = Number(food1.data[6]) + Number(food2.data[6]);
-        combarray[7] = Number(food1.data[7]) + Number(food2.data[7]);
-
-        return new Food(combarray);
-    }
-
-
-
-
-    static createFoodFromJson(json) {
-        // Get the first key of the JSON object to access the food item
-        const firstKey = Object.keys(json)[0];
-        const item = json[firstKey];
-
-        // Extract nutritional details from the JSON object
-        const title = item.label || "Unknown Food";
-        if (title === "made-to-order omelette bar") {
-
-        }
-        const calories = parseFloat(item.nutrition_details.calories?.value || 0);
-        const carbs = parseFloat(item.nutrition_details.carbohydrateContent?.value || 0);
-        const protein = parseFloat(item.nutrition_details.proteinContent?.value || 0);
-        const fat = parseFloat(item.nutrition_details.fatContent?.value || 0);
-        const satfat = parseFloat(item.nutrition_details.saturatedFatContent?.value || 0);
-        const transfat = parseFloat(item.nutrition_details.transFatContent?.value || 0);
-        const cholfat = parseFloat(item.nutrition_details.cholesterolContent?.value || 0);
-        const sugars = parseFloat(item.nutrition_details.sugarContent?.value || 0);
-        const sodium = parseFloat(item.nutrition_details.sodiumContent?.value || 0);
-        const dietaryFiber = parseFloat(item.nutrition_details.fiberContent?.value || 0);
-        const servingsize = parseFloat(item.nutrition_details.servingsize?.value || 0);
-
-
-        const flags = item.cor_icon ? Object.values(item.cor_icon) : [];
-
-
-        const nutarray = [title, calories, carbs, protein, fat, satfat, transfat, cholfat, sugars, sodium, dietaryFiber, servingsize, flags];
-
-        // Return a new Food object using the nutarray
-        return new Food(nutarray);
-    }
-
-    static addFoodsToDatabaseFromBigJSON(bigJSON) {
-        const foods = [];
-
-        // Iterate through each entry in the big JSON
-        for (const [key, entry] of Object.entries(bigJSON)) {
-            try {
-                // Create a single-item JSON object in the format expected by createFoodFromJson
-                const singleItemJSON = {[key]: entry};
-
-                // Create food object and add to array if it has nutrition details
-                if (entry.nutrition_details && Object.keys(entry.nutrition_details).length > 0) {
-                    const foodItem = Food.createFoodFromJson(singleItemJSON);
-                    foods.push(foodItem);
-                    addValue(foodItem.title,foodItem);
-                } else {
-                    console.log(`Skipping ${entry.label || 'unnamed item'} - No nutrition details available`);
-                }
-            } catch (error) {
-                console.log(`Error processing item ${key}:`, error.message);
-            }
-        }
-
-        return foods;
-    }
-}
-
-
-
 const lotsOfJSON = {
     "26556374": {
         "id": "26556374",
@@ -10201,5 +9631,580 @@ const lotsOfJSON = {
     }
 };
 
-//const testFood1 = Food.addFoodsToDatabaseFromBigJSON(lotsOfJSON);
-console.log("Start of testFood1: \n" + JSON.stringify(testFood1));
+class Food {
+    // Constructor method to initialize an object
+    static json1 = {
+        "27320362": {
+            "id": "27320362",
+            "label": "creamy grits",
+            "recipes": {
+                "entrees": [
+                    {
+                        "recipe_id": "70117559",
+                        "recipe_name": "creamy grits"
+                    }
+                ],
+                "sides": []
+            },
+            "description": "",
+            "short_name": "",
+            "raw_cooked": "0",
+            "is_rotating": "0",
+            "zero_entree": "0",
+            "cor_icon": {
+                "1": "Vegetarian",
+                "9": "Made without Gluten-Containing Ingredients"
+            },
+            "ordered_cor_icon": {
+                "0001-0001": {
+                    "id": "1",
+                    "label": "Vegetarian"
+                },
+                "0003-0009": {
+                    "id": "9",
+                    "label": "Made without Gluten-Containing Ingredients"
+                }
+            },
+            "nextepid": "0",
+            "price": "",
+            "sizes": [],
+            "nutrition": {
+                "kcal": "390",
+                "well_being": "",
+                "well_being_image": ""
+            },
+            "special": 1,
+            "tier3": 0,
+            "tier": 1,
+            "rating": "",
+            "connector": "",
+            "options": [],
+            "station_id": "4160",
+            "station": "<strong>@soup<\/strong>",
+            "nutrition_details": {
+                "calories": {
+                    "label": "Calories",
+                    "value": "390",
+                    "unit": ""
+                },
+                "servingSize": {
+                    "label": "Serving Size",
+                    "value": "8.0",
+                    "unit": "oz"
+                },
+                "fatContent": {
+                    "label": "Total Fat",
+                    "value": "24",
+                    "unit": "g"
+                },
+                "saturatedFatContent": {
+                    "label": "Saturated Fat",
+                    "value": "14",
+                    "unit": "g"
+                },
+                "transFatContent": {
+                    "label": "Trans Fat",
+                    "value": "1",
+                    "unit": "g"
+                },
+                "cholesterolContent": {
+                    "label": "Cholesterol",
+                    "value": "65",
+                    "unit": "mg"
+                },
+                "sodiumContent": {
+                    "label": "Sodium",
+                    "value": "420",
+                    "unit": "mg"
+                },
+                "carbohydrateContent": {
+                    "label": "Total Carbohydrate",
+                    "value": "39",
+                    "unit": "g"
+                },
+                "fiberContent": {
+                    "label": "Dietary Fiber",
+                    "value": "2",
+                    "unit": "g"
+                },
+                "sugarContent": {
+                    "label": "Sugars",
+                    "value": "5",
+                    "unit": "g"
+                },
+                "proteinContent": {
+                    "label": "Protein",
+                    "value": "7",
+                    "unit": "g"
+                }
+            },
+            "ingredients": "",
+            "nutrition_link": "nutrition information",
+            "sub_station_id": "",
+            "sub_station": "",
+            "sub_station_order": "",
+            "monotony": {}
+        },
+    }
+    static Food1 = Food.createFoodFromJson(Food.json1)
+
+    static json2 ={
+        "27301756": {
+            "id": "27301756",
+            "label": "French toast",
+            "recipes": {
+                "entrees": [
+                    {
+                        "recipe_id": "70069741",
+                        "recipe_name": "french toast"
+                    }
+                ],
+                "sides": []
+            },
+            "description": "Hartzler Family Dairy, Texas toast, cage-free eggs",
+            "short_name": "",
+            "raw_cooked": "0",
+            "is_rotating": "0",
+            "zero_entree": "0",
+            "cor_icon": {
+                "1": "Vegetarian",
+                "6": "Farm to Fork",
+                "18": "Humane"
+            },
+            "ordered_cor_icon": {
+                "0001-0001": {
+                    "id": "1",
+                    "label": "Vegetarian"
+                },
+                "0007-0006": {
+                    "id": "6",
+                    "label": "Farm to Fork"
+                },
+                "0010-0018": {
+                    "id": "18",
+                    "label": "Humane"
+                }
+            },
+            "nextepid": "0",
+            "price": "",
+            "sizes": [],
+            "nutrition": {
+                "kcal": "300",
+                "well_being": "",
+                "well_being_image": ""
+            },
+            "special": 1,
+            "tier3": 0,
+            "tier": 1,
+            "rating": "",
+            "connector": "",
+            "options": [],
+            "station_id": "25035",
+            "station": "<strong>@From The Home<\/strong>",
+            "nutrition_details": {
+                "calories": {
+                    "label": "Calories",
+                    "value": "300",
+                    "unit": ""
+                },
+                "servingSize": {
+                    "label": "Serving Size",
+                    "value": "5.0",
+                    "unit": "oz"
+                },
+                "fatContent": {
+                    "label": "Total Fat",
+                    "value": "12",
+                    "unit": "g"
+                },
+                "saturatedFatContent": {
+                    "label": "Saturated Fat",
+                    "value": "4",
+                    "unit": "g"
+                },
+                "transFatContent": {
+                    "label": "Trans Fat",
+                    "value": "0",
+                    "unit": "g"
+                },
+                "cholesterolContent": {
+                    "label": "Cholesterol",
+                    "value": "80",
+                    "unit": "mg"
+                },
+                "sodiumContent": {
+                    "label": "Sodium",
+                    "value": "380",
+                    "unit": "mg"
+                },
+                "carbohydrateContent": {
+                    "label": "Total Carbohydrate",
+                    "value": "39",
+                    "unit": "g"
+                },
+                "fiberContent": {
+                    "label": "Dietary Fiber",
+                    "value": "1",
+                    "unit": "g"
+                },
+                "sugarContent": {
+                    "label": "Sugars",
+                    "value": "4",
+                    "unit": "g"
+                },
+                "proteinContent": {
+                    "label": "Protein",
+                    "value": "10",
+                    "unit": "g"
+                }
+            },
+            "ingredients": "",
+            "nutrition_link": "nutrition information",
+            "sub_station_id": "",
+            "sub_station": "",
+            "sub_station_order": "",
+            "monotony": {}
+        }
+    }
+
+    static Food2 = Food.createFoodFromJson(Food.json2)
+
+    static json3 = {
+        "20079470": {
+            "id": "20079470",
+            "label": "Bran Flakes",
+            "recipes": {
+                "entrees": [
+                    {
+                        "recipe_id": "73372377",
+                        "recipe_name": "bran flakes"
+                    }
+                ]
+            },
+            "description": "",
+            "short_name": "",
+            "raw_cooked": "0",
+            "is_rotating": "0",
+            "zero_entree": "0",
+            "cor_icon": {
+                "4": "Vegan"
+            },
+            "ordered_cor_icon": {
+                "0002-0004": {
+                    "id": "4",
+                    "label": "Vegan"
+                }
+            },
+            "nextepid": "0",
+            "price": "",
+            "sizes": [],
+            "nutrition": {
+                "kcal": "200",
+                "well_being": "",
+                "well_being_image": ""
+            },
+            "special": 0,
+            "tier3": 0,
+            "tier": "2",
+            "rating": "",
+            "connector": "",
+            "options": [],
+            "station_id": "3818",
+            "station": "<strong>@breakfast<\/strong>",
+            "nutrition_details": {
+                "calories": {
+                    "label": "Calories",
+                    "value": "200",
+                    "unit": ""
+                },
+                "servingSize": {
+                    "label": "Serving Size",
+                    "value": "1.0",
+                    "unit": "oz"
+                },
+                "fatContent": {
+                    "label": "Total Fat",
+                    "value": "1.5",
+                    "unit": "g"
+                },
+                "saturatedFatContent": {
+                    "label": "Saturated Fat",
+                    "value": "0",
+                    "unit": "g"
+                },
+                "transFatContent": {
+                    "label": "Trans Fat",
+                    "value": "0",
+                    "unit": "g"
+                },
+                "cholesterolContent": {
+                    "label": "Cholesterol",
+                    "value": "0",
+                    "unit": "mg"
+                },
+                "sodiumContent": {
+                    "label": "Sodium",
+                    "value": "330",
+                    "unit": "mg"
+                },
+                "carbohydrateContent": {
+                    "label": "Total Carbohydrate",
+                    "value": "50",
+                    "unit": "g"
+                },
+                "fiberContent": {
+                    "label": "Dietary Fiber",
+                    "value": "11",
+                    "unit": "g"
+                },
+                "sugarContent": {
+                    "label": "Sugars",
+                    "value": "11",
+                    "unit": "g"
+                },
+                "proteinContent": {
+                    "label": "Protein",
+                    "value": "6",
+                    "unit": "g"
+                }
+            },
+            "ingredients": "bran flakes",
+            "nutrition_link": "nutrition information",
+            "sub_station_id": "122135",
+            "sub_station": "cereals cold",
+            "sub_station_order": "2",
+            "monotony": {}
+        }
+    }
+
+    static Food3 = Food.createFoodFromJson(Food.json3)
+
+    static json4 = {
+        "20079472": {
+            "id": "20079472",
+            "label": "Cheerios",
+            "recipes": {
+                "entrees": [
+                    {
+                        "recipe_id": "73372511",
+                        "recipe_name": "cheerios"
+                    }
+                ]
+            },
+            "description": "",
+            "short_name": "",
+            "raw_cooked": "0",
+            "is_rotating": "0",
+            "zero_entree": "0",
+            "cor_icon": {
+                "4": "Vegan",
+                "9": "Made without Gluten-Containing Ingredients"
+            },
+            "ordered_cor_icon": {
+                "0002-0004": {
+                    "id": "4",
+                    "label": "Vegan"
+                },
+                "0003-0009": {
+                    "id": "9",
+                    "label": "Made without Gluten-Containing Ingredients"
+                }
+            },
+            "nextepid": "0",
+            "price": "",
+            "sizes": [],
+            "nutrition": {
+                "kcal": "100",
+                "well_being": "",
+                "well_being_image": ""
+            },
+            "special": 0,
+            "tier3": 0,
+            "tier": "2",
+            "rating": "",
+            "connector": "",
+            "options": [],
+            "station_id": "3818",
+            "station": "<strong>@breakfast<\/strong>",
+            "nutrition_details": {
+                "calories": {
+                    "label": "Calories",
+                    "value": "100",
+                    "unit": ""
+                },
+                "servingSize": {
+                    "label": "Serving Size",
+                    "value": "1.0",
+                    "unit": "oz"
+                },
+                "fatContent": {
+                    "label": "Total Fat",
+                    "value": "2",
+                    "unit": "g"
+                },
+                "saturatedFatContent": {
+                    "label": "Saturated Fat",
+                    "value": "0",
+                    "unit": "g"
+                },
+                "transFatContent": {
+                    "label": "Trans Fat",
+                    "value": "0",
+                    "unit": "g"
+                },
+                "cholesterolContent": {
+                    "label": "Cholesterol",
+                    "value": "0",
+                    "unit": "mg"
+                },
+                "sodiumContent": {
+                    "label": "Sodium",
+                    "value": "135",
+                    "unit": "mg"
+                },
+                "carbohydrateContent": {
+                    "label": "Total Carbohydrate",
+                    "value": "20",
+                    "unit": "g"
+                },
+                "fiberContent": {
+                    "label": "Dietary Fiber",
+                    "value": "3",
+                    "unit": "g"
+                },
+                "sugarContent": {
+                    "label": "Sugars",
+                    "value": "1",
+                    "unit": "g"
+                },
+                "proteinContent": {
+                    "label": "Protein",
+                    "value": "3",
+                    "unit": "g"
+                }
+            },
+            "ingredients": "cheerios",
+            "nutrition_link": "nutrition information",
+            "sub_station_id": "122135",
+            "sub_station": "cereals cold",
+            "sub_station_order": "2",
+            "monotony": {}
+        }
+    }
+
+    static Food4 = Food.createFoodFromJson(Food.json4)
+
+    constructor(nutarray) {
+        this.title = nutarray[0];
+        this.calories = nutarray[1];
+        this.carbs = nutarray[2];
+        this.protein = nutarray[3];
+        this.fat = nutarray[4];
+        this.satfat = nutarray[5];
+        this.transfat = nutarray[6];
+        this.chol = nutarray[7];
+        this.sugars = nutarray[8];
+        this.sodium = nutarray[9];
+        this.dietaryfiber = nutarray[10];
+        this.servingsize = nutarray[11];
+        //flags
+
+
+        this.nutinfo = nutarray;
+    }
+
+    // Getter
+    get data() {
+        return this.nutinfo;
+    }
+
+    // getter
+    get getName() {
+        return this.title;
+    }
+
+
+    static combine(food1, food2) {
+        const combarray = [];
+        combarray[0] = `${food1.title} & ${food2.title}`;
+        combarray[1] = Number(food1.data[1]) + Number(food2.data[1]);
+        combarray[2] = Number(food1.data[2]) + Number(food2.data[2]);
+        combarray[3] = Number(food1.data[3]) + Number(food2.data[3]);
+        combarray[4] = Number(food1.data[4]) + Number(food2.data[4]);
+        combarray[5] = Number(food1.data[5]) + Number(food2.data[5]);
+        combarray[6] = Number(food1.data[6]) + Number(food2.data[6]);
+        combarray[7] = Number(food1.data[7]) + Number(food2.data[7]);
+
+        return new Food(combarray);
+    }
+
+
+
+
+    static createFoodFromJson(json) {
+        // Get the first key of the JSON object to access the food item
+        const firstKey = Object.keys(json)[0];
+        const item = json[firstKey];
+
+        // Extract nutritional details from the JSON object
+        const title = item.label || "Unknown Food";
+        if (title === "made-to-order omelette bar") {
+
+        }
+        const calories = parseFloat(item.nutrition_details.calories?.value || 0);
+        const carbs = parseFloat(item.nutrition_details.carbohydrateContent?.value || 0);
+        const protein = parseFloat(item.nutrition_details.proteinContent?.value || 0);
+        const fat = parseFloat(item.nutrition_details.fatContent?.value || 0);
+        const satfat = parseFloat(item.nutrition_details.saturatedFatContent?.value || 0);
+        const transfat = parseFloat(item.nutrition_details.transFatContent?.value || 0);
+        const cholfat = parseFloat(item.nutrition_details.cholesterolContent?.value || 0);
+        const sugars = parseFloat(item.nutrition_details.sugarContent?.value || 0);
+        const sodium = parseFloat(item.nutrition_details.sodiumContent?.value || 0);
+        const dietaryFiber = parseFloat(item.nutrition_details.fiberContent?.value || 0);
+        const servingsize = parseFloat(item.nutrition_details.servingsize?.value || 0);
+
+
+        const flags = item.cor_icon ? Object.values(item.cor_icon) : [];
+
+
+        const nutarray = [title, calories, carbs, protein, fat, satfat, transfat, cholfat, sugars, sodium, dietaryFiber, servingsize, flags];
+
+        // Return a new Food object using the nutarray
+        return new Food(nutarray);
+    }
+
+    static addFoodsToDatabaseFromBigJSON(bigJSON) {
+        const foods = [];
+
+        // Iterate through each entry in the big JSON
+        for (const [key, entry] of Object.entries(bigJSON)) {
+            try {
+                // Create a single-item JSON object in the format expected by createFoodFromJson
+                const singleItemJSON = {[key]: entry};
+
+                // Create food object and add to array if it has nutrition details
+                if (entry.nutrition_details && Object.keys(entry.nutrition_details).length > 0) {
+                    const foodItem = Food.createFoodFromJson(singleItemJSON);
+                    foods.push(foodItem);
+                    addValue(foodItem.title,foodItem);
+                } else {
+                    console.log(`Skipping ${entry.label || 'unnamed item'} - No nutrition details available`);
+                }
+            } catch (error) {
+                console.log(`Error processing item ${key}:`, error.message);
+            }
+        }
+
+        return foods;
+    }
+
+    static testFood1 = Food.addFoodsToDatabaseFromBigJSON(lotsOfJSON);
+
+}
+
+
+
+
+
+
+

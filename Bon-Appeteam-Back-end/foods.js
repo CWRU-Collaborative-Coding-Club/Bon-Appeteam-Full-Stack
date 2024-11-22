@@ -1,5 +1,5 @@
 export const HARDCODED_FOODS = {
-    'creamy grits': {
+    'Creamy Grits': {
         calories: 150,
         carbs: 31,
         protein: 3,
@@ -11,7 +11,7 @@ export const HARDCODED_FOODS = {
         sodium: 540,
         dietaryfiber: 1
     },
-    'beef curry soup with lentils': {
+    'Beef Curry Soup With Lentils': {
         calories: 280,
         carbs: 35,
         protein: 18,
@@ -23,7 +23,7 @@ export const HARDCODED_FOODS = {
         sodium: 780,
         dietaryfiber: 6
     },
-    'creamy chicken taco soup': {
+    'Creamy Chicken Taco Soup': {
         calories: 220,
         carbs: 25,
         protein: 15,
@@ -35,7 +35,7 @@ export const HARDCODED_FOODS = {
         sodium: 680,
         dietaryfiber: 4
     },
-    'French toast': {
+    'French Toast': {
         calories: 300,
         carbs: 39,
         protein: 10,
