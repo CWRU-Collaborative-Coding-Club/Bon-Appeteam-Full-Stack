@@ -1,80 +1,34 @@
-// MEAL SWIPES SCREEN
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Dimensions } from 'react-native';
+import React, { useContext } from 'react';
+import { View, Text, ScrollView } from 'react-native';
 import { ProgressBar } from 'react-native-paper';
+import { ProgressContext } from './ProgressContext';
 import styles from './styles';
 
 function ProgressTrackerScreen() {
-    let recommendations = [
-        {
-            option: 'Calories',
-            currentValue: 0.2,
-            goalValue: 2,
-        },
-        {
-            option: 'Protein',
-            currentValue: 0.2,
-            goalValue: 2,
-        },
-        {
-            option: 'Carbohydrates',
-            currentValue: 0.2,
-            goalValue: 2,
-        },
-        {
-            option: 'Fiber',
-            currentValue: 0.2,
-            goalValue: 2,
-        },
-        {
-            option: 'Sugar',
-            currentValue: 0.2,
-            goalValue: 2,
-        },
-        {
-            option: 'Sodium',
-            currentValue: 0.2,
-            goalValue: 2,
-        },
-        {
-            option: 'Fat',
-            currentValue: 0.2,
-            goalValue: 2,
-        },
-        {
-            option: 'Trans Fats',
-            currentValue: 0.2,
-            goalValue: 2,
-        },
-        {
-            option: 'Saturated Fats',
-            currentValue: 0.2,
-            goalValue: 2,
-        },
-        {
-            option: 'Cholesterol',
-            currentValue: 0.2,
-            goalValue: 2,
-        },
-    ];
+    const { progress } = useContext(ProgressContext);
 
     return (
         <ScrollView style={styles.container}>
-            {recommendations.map((rec, index) => (
-                <View key={index} style={styles.optionBlock}>
-                    <Text style={styles.blockTitle}>{rec.option}</Text>
-                    <View style={styles.block}>
-                        <ProgressBar
-                            progress={rec.currentValue/rec.goalValue}
-                            color={rec.currentValue/rec.goalValue > 0.7 ? '#00c853' : rec.currentValue/rec.goalValue > 0.4 ? '#ffeb3b' : '#d32f2f'}
-                            style={styles.progressBar}
-                        />
-                        <Text style={styles.block}> ({rec.currentValue} / {rec.goalValue}g)</Text>
+            {Object.keys(progress).map((key) => {
+                const { currentValue, goalValue } = progress[key];
+                const overGoal = currentValue > goalValue;
+
+                // Ensure all values are properly rendered
+                return (
+                    <View key={key} style={overGoal ? styles.redOptionBlock : styles.optionBlock}>
+                        <Text style={styles.blockTitle}>{key}</Text>
+                        <View style={styles.block}>
+                            <ProgressBar
+                                progress={overGoal ? 1 : currentValue / goalValue}
+                                color={ overGoal ? '#15611d': currentValue / goalValue > 0.7 ? '#00c853' : currentValue / goalValue > 0.4 ? '#ffeb3b' : '#d32f2f'}
+                                style={styles.progressBar}
+                            />
+                            <Text>({currentValue} / {goalValue}{key == 'Calories' ? '' : 'g'})</Text>
+                        </View>
+                        <Text>Remaining: {(goalValue - currentValue).toFixed(2)}{key == 'Calories' ? '' : 'g'}</Text>
                     </View>
-                    <Text>Until goal: {rec.goalValue-rec.currentValue}g</Text>
-                    {/*<Text style={styles.label}>{rec.currentValue} / {rec.goalValue}</Text>*/}
-                </View>
-            ))}
+                );
+            })}
         </ScrollView>
     );
 }

@@ -1,6 +1,7 @@
 // MEAL SWIPES SCREEN
-import React from 'react';
-import {View, Text, Button, ScrollView} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, TextInput, ScrollView, Button } from 'react-native';
+import styles from './styles';
 
 function ProfileScreen () {
     return (
@@ -10,10 +11,7 @@ function ProfileScreen () {
 
 export default ProfileScreen;
 //
-// import React, { useState } from 'react';
-// import { View, Text, TextInput, ScrollView, Button } from 'react-native';
 // import { Picker } from '@react-native-picker/picker';
-// import styles from './styles';
 //
 // function ProfileScreen() {
 //     const [profile, setProfile] = useState({

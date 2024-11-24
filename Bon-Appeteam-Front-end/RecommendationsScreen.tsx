@@ -6,20 +6,24 @@
 *   front end    npx expo start
 * */
 
-import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import React, { useState, useEffect, useContext } from 'react';
+import { View, Text, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { ProgressBar } from 'react-native-paper';
+import { ProgressContext } from './ProgressContext';
 import styles from './styles';
 
+
 function RecommendationsScreen() {
+    const { updateProgress } = useContext(ProgressContext);
     const [recommendations, setRecommendations] = useState([]);
 
     // Fetch foods from the API
     useEffect(() => {
+
         const fetchFoods = async () => {
             try {
                 const response = await fetch('http://localhost:8080/api/foods');
-                const data = await response.json();
+                const data = (await response.json()) as Record<string, any>;
                 // Convert object to array for mapping
                 const formattedData = Object.entries(data).map(([foodName, foodData], index) => ({
                     option: foodName,
@@ -43,13 +47,34 @@ function RecommendationsScreen() {
             }
         };
 
-        fetchFoods();
+        fetchFoods()
     }, []);
+
+    const handlePress = (item) => {
+        Alert.alert('Item Clicked', `You clicked on ${item.option}`);
+        updateProgress({
+            Calories: item.calories,
+            Protein: item.protein,
+            Carbohydrates: item.carbs,
+            Fat: item.fat,
+            Sugar: item.sugars,
+            Sodium: item.sodium,
+            Fiber: item.dietaryfiber,
+            TransFats: item.transfat,
+            SaturatedFats: item.satfat,
+            Cholesterol: item.chol,
+        });
+    };
 
     return (
         <ScrollView style={styles.container}>
             {recommendations.map((rec, index) => (
-                <View key={index} style={styles.optionBlock}>
+                <TouchableOpacity
+                    key={index}
+                    style={styles.optionBlock}
+                    onPress={() => handlePress(rec)}
+                >
+                    {/*<View key={index} style={styles.optionBlock}>*/}
                     <Text style={styles.blockTitle}>{rec.option}</Text>
                     <Text style={styles.label}>Calories: {rec.calories}</Text>
                     <Text style={styles.label}>Carbs: {rec.carbs}g</Text>
@@ -65,7 +90,8 @@ function RecommendationsScreen() {
                         />
                         <Text style={styles.label}>  {(rec.similarity * 100).toFixed(2)}%</Text>
                     </View>
-                </View>
+                {/*</View>*/}
+                </TouchableOpacity>
             ))}
         </ScrollView>
     );

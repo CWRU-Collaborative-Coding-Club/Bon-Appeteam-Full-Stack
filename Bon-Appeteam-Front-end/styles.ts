@@ -23,6 +23,17 @@ const styles = StyleSheet.create({
         shadowRadius: 8,
         elevation: 2,
     },
+    redOptionBlock: {
+        backgroundColor: 'rgba(218,21,21,0.16)',
+        borderRadius: 8,
+        padding: 16,
+        marginBottom: 16,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 8,
+        elevation: 2,
+    },
     blockTitle: {
         fontSize: 18,
         fontWeight: '600',
@@ -66,7 +77,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         marginTop: 8,
     },
-
 });
 
 export default styles;
