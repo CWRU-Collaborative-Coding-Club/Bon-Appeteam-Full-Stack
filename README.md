@@ -53,6 +53,7 @@ cd Bon-Appeteam-Back-end
 node express.js
 ```
 This command starts the back-end server and makes the API endpoints accessible. Leave this terminal running in the background.
+
 2. Start the Front-End App
 In a new terminal, navigate to the front-end directory and run the app:
 ```
