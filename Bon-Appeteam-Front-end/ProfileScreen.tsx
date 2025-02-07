@@ -14,7 +14,7 @@ import styles from './styles';
 import DropDownPicker from 'react-native-dropdown-picker';
 import { Picker } from '@react-native-picker/picker';
 
-function ProfileScreen() {
+function ProfileScreen({navigation}) {
     const [profile, setProfile] = useState({
         height: '',
         weight: '',
@@ -34,9 +34,20 @@ function ProfileScreen() {
         alert('Profile has been saved!');
     };
 
+    const handleSignOut = () => {
+        // Clear any stored user data (if applicable)
+        // Navigate back to the login screen
+        navigation.navigate('Login');
+    };
+
     return (
         <ScrollView contentContainerStyle={styles.container}>
             <Text style={styles.title}>Personal Info / Settings</Text>
+
+            {/* Sign Out Button (AT THE TOP JUST FOR TESTING, WILL MOVE TO BOTTOM LATER) */}
+            <View style={{ marginTop: 20 }}>
+                <Button title="Sign Out" onPress={handleSignOut} color="#003071" />
+            </View>
 
             {/* Height Input */}
             <View style={styles.optionBlock}>
