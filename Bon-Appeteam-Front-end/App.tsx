@@ -8,6 +8,7 @@ import RecommendationsScreen from './RecommendationsScreen';
 import styles from './styles';
 import { Ionicons } from '@expo/vector-icons';
 import { ProgressProvider } from './ProgressContext';
+import { getDB } from './MealSwipeData';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,6 +24,12 @@ function App() {
                     //tabBarLabelStyle: {fontSize: 11, fontFamily:'Arial'}, // Palatino, Iowan Old Style
                 }}>
                     <Tab.Screen name="Recommendations" component={RecommendationsScreen}
+                                options={{ tabBarLabel: 'Recommendations',
+                                    tabBarIcon: () => (
+                                        <Ionicons name="map-outline"
+                                                  color={styles.white.color} size={24} />),
+                                }} />
+                    <Tab.Screen name="Recommendations" component={getDB}
                                 options={{ tabBarLabel: 'Recommendations',
                                     tabBarIcon: () => (
                                         <Ionicons name="map-outline"
