@@ -1,4 +1,4 @@
-import SQLite, { SQLiteDatabase } from 'react-native-sqlite-storage';
+const SQLite = require('react-native-sqlite-storage');
 
 SQLite.DEBUG(true);
 SQLite.enablePromise(true);
