@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, ScrollView, Button } from 'react-native';
 import styles from './styles';
+
 //
 // function ProfileScreen () {
 //     return (
