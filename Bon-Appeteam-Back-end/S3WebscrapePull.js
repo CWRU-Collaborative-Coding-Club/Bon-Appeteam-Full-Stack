@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const AWS = require('aws-sdk')
 const fs = require("fs");
 const { S3Client, GetObjectCommand } = require("@aws-sdk/client-s3");
@@ -7,9 +9,9 @@ const FILE_KEY = "fribley_04_04_2025.json";
 
 
 AWS.config.update({
-    accessKeyId: ,
-    secretAccessKey: ,
-    region: REGION
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: process.env.AWS_REGION
 });
 
 
