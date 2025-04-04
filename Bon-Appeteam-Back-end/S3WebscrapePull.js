@@ -1,4 +1,6 @@
-require('dotenv').config();
+require('dotenv').config({
+    path: __dirname + '/.env'
+  });
 
 const AWS = require('aws-sdk')
 const fs = require("fs");
@@ -40,5 +42,7 @@ s3.getObject(params, (err, data) => {
     } else {
         const json = JSON.parse(data.Body.toString('utf-8'));
         console.log('JSON from S3:', json);
+        console.log("example item for debug:", json["20079367"]);
+
     }
 });
