@@ -16,7 +16,7 @@ async function getFood() {
         const foods = data.map(entry => Object.values(entry));
 
         // Log the result
-        console.log(foods[0]);
+        console.log(foods);
     } catch (error) {
         console.error('Error:', error);
     }
