@@ -77,6 +77,37 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         marginTop: 8,
     },
+
+    // New styles for swipe screen
+    swipeTag: {
+        backgroundColor: '#e0e0e0',
+        paddingVertical: 4,
+        paddingHorizontal: 10,
+        borderRadius: 20,
+        marginRight: 8,
+    },
+    swipeTagText: {
+        fontSize: 13,
+        fontWeight: '500',
+        color: '#444',
+    },
+    headerRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 8,
+    },
+    swipeCountRow: {
+        flexDirection: 'row',
+    },
+    swipeCountSection: {
+        alignItems: 'flex-end',
+    },
+    swipeLabel: {
+        fontSize: 12,
+        color: '#777',
+        marginBottom: 4,
+    },
 });
 
 export default styles;
