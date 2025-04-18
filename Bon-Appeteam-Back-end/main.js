@@ -3,24 +3,36 @@ import {UserProfile} from "./userProfile";
 const { user } = require("./userProfile");
 import {scoreMeal} from "./scoreMeal";
 import {getFood, foods} from "./getfood";
+import {styleText} from "node:util";
 
 
 // Two arrays, one storing food names and the other storing food scores
-export let names = [];
-export let scores = [];
+let Foods = function() {
+    let names;
+    let scores;
+
+    this.resetFoods = function() {
+        names = [];
+        scores = [];
+    }
+}
+
+export let json_array = [];
 
 /**
  * Runs the score meal function as soon as the function opens
  */
 function callScoreMeal() {
-    names = [];
-    scores = [];
+    Foods.names = [];
+    Foods.scores = [];
     for (const food of foods) {
-        names.push(food[0]);
-        scores.push(scoreMeal.scoreMeal(food));
+        Foods.names.push(food[0]);
+        Foods.scores.push(scoreMeal.scoreMeal(food));
     }
 }
 callScoreMeal();
+
+module.exports = Foods;
 
 /**
  * Updates consumption trackers with new meal data

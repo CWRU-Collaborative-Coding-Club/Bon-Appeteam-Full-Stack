@@ -6,16 +6,17 @@
 *   front end    npx expo start
 * */
 
+import * as Foods from '../Bon-Appeteam-Back-end/main.js';
 import React, { useState, useEffect, useContext } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { ProgressBar } from 'react-native-paper';
 import { ProgressContext } from './ProgressContext';
 import styles from './styles';
-import {UserProfile} from "./userProfile";
+import {UserProfile} from "../Bon-Appeteam-Back-end/userProfile";
 
 const { user } = require("./userProfile");
-import {scoreMeal} from "./scoreMeal";
-import {getFood, foods} from "./getfood";
+import {scoreMeal} from "../Bon-Appeteam-Back-end/scoreMeal";
+import {getFood, foods} from "../Bon-Appeteam-Back-end/getfood";
 
 
 function RecommendationsScreen() {
