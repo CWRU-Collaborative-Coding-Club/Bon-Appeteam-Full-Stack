@@ -1,7 +1,16 @@
 const { userProfile } = require("./userProfile");
 
-function scoreMeal(arr) {
-    const [food, cal, car, pro, fat, sugar, sodium, fiber, user] = arr;
+export function scoreMeal(arr) {
+   //const [food, cal, car, pro, fat, sugar] = arr;
+    const name = arr[0];
+    const cal = arr[1];
+    const car = arr[8];
+    const pro = arr[11];
+    const fat = arr[3];
+    const sugar = arr[10];
+    const fiber = arr[9];
+    const sodium = arr[7];
+    let user;   //placeholder until we know how to access the user
 
     // Get remaining daily allowances
     const remainingCal = user.getDailyCalorieIntake() - user.dailyCaloriesConsumed;
