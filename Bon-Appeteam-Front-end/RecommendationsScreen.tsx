@@ -42,8 +42,9 @@ function RecommendationsScreen() {
                     sugars: foodData.sugars,
                     sodium: foodData.sodium,
                     dietaryfiber: foodData.dietaryfiber,
+                    score: foodData.score, // ##NEW ADDITION FOR HANDLING RECOMMENDATION ALGORITHM
                     similarity: Math.random(), // Placeholder for actual similarity logic
-                    location: Math.random() * 10, // Placeholder for actual location data
+                    location: "brazil", // Placeholder for actual location data
                     remainingSwipes: 10 - index, // Placeholder logic
                 })).sort((a, b) => b.similarity - a.similarity); // Sort by similarity (descending)
                 setRecommendations(formattedData);
