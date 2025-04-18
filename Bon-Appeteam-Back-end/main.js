@@ -6,8 +6,8 @@ import {getFood, foods} from "./getfood";
 
 
 // Two arrays, one storing food names and the other storing food scores
-let names = [];
-let scores = [];
+export let names = [];
+export let scores = [];
 
 /**
  * Runs the score meal function as soon as the function opens

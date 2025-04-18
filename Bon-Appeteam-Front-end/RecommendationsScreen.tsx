@@ -11,6 +11,11 @@ import { View, Text, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { ProgressBar } from 'react-native-paper';
 import { ProgressContext } from './ProgressContext';
 import styles from './styles';
+import {UserProfile} from "./userProfile";
+
+const { user } = require("./userProfile");
+import {scoreMeal} from "./scoreMeal";
+import {getFood, foods} from "./getfood";
 
 
 function RecommendationsScreen() {
