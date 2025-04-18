@@ -1,3 +1,7 @@
+require('dotenv').config({
+    path: __dirname + '/.env'
+  });
+
 const AWS = require('aws-sdk')
 const fs = require("fs");
 const { S3Client, GetObjectCommand } = require("@aws-sdk/client-s3");
@@ -7,9 +11,9 @@ const FILE_KEY = "fribley_04_04_2025.json";
 
 
 AWS.config.update({
-    accessKeyId: ,
-    secretAccessKey: ,
-    region: REGION
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: process.env.AWS_REGION
 });
 
 
@@ -38,5 +42,7 @@ s3.getObject(params, (err, data) => {
     } else {
         const json = JSON.parse(data.Body.toString('utf-8'));
         console.log('JSON from S3:', json);
+        console.log("example item for debug:", json["20079367"]);
+
     }
 });
