@@ -8,7 +8,7 @@ import RecommendationsScreen from './RecommendationsScreen';
 import styles from './styles';
 import { Ionicons } from '@expo/vector-icons';
 import { ProgressProvider } from './ProgressContext';
-import { getDB } from './MealSwipeData';
+//import { getDB } from './MealSwipeData';
 
 const Tab = createBottomTabNavigator();
 
@@ -29,12 +29,12 @@ function App() {
                                         <Ionicons name="map-outline"
                                                   color={styles.white.color} size={24} />),
                                 }} />
-                    <Tab.Screen name="Recommendations" component={getDB}
+                    {/* <Tab.Screen name="RecommendationsTR" component={getDB}
                                 options={{ tabBarLabel: 'Recommendations',
                                     tabBarIcon: () => (
                                         <Ionicons name="map-outline"
                                                   color={styles.white.color} size={24} />),
-                                }} />
+                                }} /> */}
                     <Tab.Screen name="Progress Tracker" component={ProgressTrackerScreen}
                                 options={{ tabBarLabel: 'Progress',
                                     tabBarIcon: () => (
